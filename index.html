@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr Euel Lewi — Speciality Dental Clinic</title>
+  <meta name="description" content="Dr Euel Lewi Speciality Dental Clinic offers restorative solutions, root canal therapy, smile brightening, emergency care and advanced orthodontics for all ages.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .font-display{font-family:'Plus Jakarta Sans',sans-serif}
+    .font-sans{font-family:'Inter',sans-serif}
+    .txt-lime{color:#bef264}
+    .bg-lime{background:#bef264}
+    .bg-forest{background:#20301f}
+    .bg-page{background:#fefce8}
+    .bg-muted{background:#f5f5f4}
+    .bg-card{background:#ffffff}
+    .txt-forest{color:#fefce8}
+    .txt-muted{color:#78716c}
+    .bdr{border-color:#e7e5e4}
+    .txt-lime-h:hover{color:#bef264}
+    .bg-w10-h:hover{background:rgba(255,255,255,.1)}
+    .bdr-forest-h:hover{border-color:rgba(32,48,31,.2)}
+    .sc103:hover{transform:scale(1.03)}
+    .sc102:hover{transform:scale(1.02)}
+    .grayscale{filter:grayscale(100%)}
+    html{scroll-behavior:smooth}
+    .bg-scd{background:#e7e5e4}
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+    .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+    .animate-slide-left { animation: slideInLeft 0.6s ease-out forwards; }
+    .animate-slide-right { animation: slideInRight 0.6s ease-out forwards; }
+    .animate-pulse-slow { animation: pulse 2s ease-in-out infinite; }
+
+    /* Hover lift effect */
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    /* Image zoom on hover */
+    .img-zoom {
+      transition: transform 0.5s ease;
+    }
+    .img-zoom:hover {
+      transform: scale(1.08);
+    }
+
+    /* Button shine effect */
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-shine::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    .btn-shine:hover::before {
+      left: 100%;
+    }
+
+    /* Underline animation for links */
+    .link-underline {
+      position: relative;
+    }
+    .link-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #bef264;
+      transition: width 0.3s ease;
+    }
+    .link-underline:hover::after {
+      width: 100%;
+    }
+
+    /* Icon bounce on hover */
+    .icon-bounce {
+      transition: transform 0.3s ease;
+    }
+    .group:hover .icon-bounce {
+      transform: translateY(-4px);
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Contact card hover */
+    .contact-card {
+      transition: all 0.3s ease;
+    }
+    .contact-card:hover {
+      transform: translateX(8px);
+      border-color: #bef264;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    /* Nav link hover effect */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #bef264;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Loading overlay */
+    .loader-overlay {
+      position: fixed;
+      inset: 0;
+      background: #20301f;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    .loader-overlay.hidden-loader {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(190, 242, 100, 0.2);
+      border-top-color: #bef264;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Footer link hover */
+    footer a {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    footer a:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Social icon hover */
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      background: #bef264 !important;
+      color: #1a2e05 !important;
+      transform: translateY(-4px) scale(1.1);
+    }
+
+    /* How it works step hover */
+    .step-item {
+      transition: all 0.3s ease;
+    }
+    .step-item:hover {
+      transform: translateX(6px);
+      border-color: #bef264;
+    }
+
+    /* CTA image zoom */
+    .cta-img-container {
+      overflow: hidden;
+    }
+    .cta-img-container img {
+      transition: transform 0.6s ease;
+    }
+    .cta-img-container:hover img {
+      transform: scale(1.05);
+    }
+
+    /* About image hover */
+    .about-img {
+      transition: transform 0.5s ease;
+    }
+    .about-img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Video card hover */
+    .video-card {
+      transition: all 0.3s ease;
+    }
+    .video-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+      border-color: #bef264;
+    }
+    .video-card .mute-btn,
+    .video-card a[aria-label="See on Facebook"] {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+    .video-card:hover .mute-btn,
+    .video-card:hover a[aria-label="See on Facebook"] {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Card hover - universal */
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+      background: #bef264 !important;
+      color: #1a2e05 !important;
+      border-color: transparent !important;
+    }
+    .card-hover:hover h3,
+    .card-hover:hover p,
+    .card-hover:hover .num-badge {
+      color: #1a2e05 !important;
+    }
+    .card-hover:hover .num-badge {
+      background: #1a2e05 !important;
+      color: #bef264 !important;
+    }
+
+    /* FAQ accordion */
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      grid-template-rows: 1fr;
+    }
+    .faq-answer > div {
+      overflow: hidden;
+    }
+    .faq-item .chevron {
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .chevron {
+      transform: rotate(180deg);
+    }
+    /* FAQ active state */
+    .faq-item.open {
+      background: #bef264 !important;
+      color: #1a2e05 !important;
+      border-color: transparent !important;
+    }
+    .faq-item.open .font-semibold {
+      color: #1a2e05 !important;
+    }
+    .faq-item.open .chevron {
+      background: #1a2e05 !important;
+      color: #bef264 !important;
+    }
+    /* FAQ - no hover effect */
+    .faq-item {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="font-sans bg-page antialiased">
+
+<!-- Loading Overlay -->
+<div class="loader-overlay" id="loader">
+  <div class="loader-spinner"></div>
+</div>
+
+<!-- Header -->
+<header id="home" class="relative z-40 bg-forest txt-forest">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+    <a href="#home" class="font-display text-xl font-bold leading-tight">
+      Dr Euel Lewi
+      <span class="block text-xs font-medium txt-forest/70">Speciality Dental Clinic</span>
+    </a>
+    <nav class="hidden items-center gap-8 lg:flex">
+      <a href="#home" class="nav-link text-sm font-medium txt-forest/80 transition-colors txt-lime-h">Home</a>
+      <a href="#about" class="nav-link text-sm font-medium txt-forest/80 transition-colors txt-lime-h">About</a>
+      <a href="#services" class="nav-link text-sm font-medium txt-forest/80 transition-colors txt-lime-h">Service</a>
+      <a href="#contact" class="nav-link text-sm font-medium txt-forest/80 transition-colors txt-lime-h">Contact</a>
+    </nav>
+     <div class="flex items-center gap-3">
+       <a href="tel:0910363238" class="hidden items-center gap-3 sm:flex txt-forest/80 transition-colors txt-lime-h">
+         <span class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
+           <svg class="h-4 w-4 txt-lime" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.92.4 1.78.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c1.03.32 1.89.59 2.81.72A2 2 0 0122 16.92z"/></svg>
+         </span>
+         <span class="text-sm font-medium">Call us</span>
+       </a>
+       <a href="#contact" class="hidden h-11 items-center gap-2 rounded-full bg-lime px-2 pl-4 text-sm font-semibold text-lime-foreground transition-transform sc103 md:flex">
+         Let's Talk
+         <span class="flex h-8 w-8 items-center justify-center rounded-full bg-forest txt-lime">
+           <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+         </span>
+       </a>
+     </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative bg-forest txt-forest">
+  <div class="mx-auto max-w-7xl px-4 pb-0 sm:px-6 lg:px-8">
+    <div class="relative pt-6 text-center">
+      <h1 class="font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+        Your smile<br>
+        <span class="txt-lime">deserves the best.</span>
+      </h1>
+    </div>
+      <div class="relative mt-8 overflow-hidden rounded-t-[2rem] img-zoom-container">
+         <img src="public/images/hero-dental.png" alt="Dr Euel Lewi Speciality Dental Clinic" class="h-[300px] w-full object-cover sm:h-[420px] lg:h-[560px] img-zoom grayscale">
+      </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="bg-page py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid items-start gap-10 lg:grid-cols-2">
+      <div>
+        <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Building Relationships One Smile at a Time</h2>
+         <div class="mt-6">
+         <div class="relative overflow-hidden rounded-3xl about-img">
+           <img src="public/images/about-exam.png" alt="A smiling patient during a dental examination" class="h-64 w-full object-cover grayscale">
+           <div class="absolute bottom-4 left-4 rounded-2xl bg-lime px-5 py-3 text-lime-foreground">
+             <p class="font-display text-2xl font-bold counter" data-target="10000">0</p>
+             <p class="text-xs font-medium">Happy Patients</p>
+           </div>
+         </div>
+         </div>
+       </div>
+       <div class="flex flex-col gap-6">
+         <div class="relative overflow-hidden rounded-3xl about-img">
+           <img src="public/images/about-dentist.png" alt="A confident dentist in a modern clinic" class="h-72 w-full object-cover grayscale">
+           <div class="absolute left-4 top-4 rounded-2xl bg-forest px-5 py-3 txt-forest">
+             <p class="font-display text-2xl font-bold counter" data-target="8">0</p>
+             <p class="text-xs font-medium txt-forest/70">Years of Experience</p>
+           </div>
+         </div>
+        <p class="leading-relaxed txt-muted">We're more than just a dental clinic — we're your partners in health, here to guide you on a journey toward a brighter, healthier smile. Our dedicated team combines years of experience with a genuine passion for patient care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="bg-muted py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Explore Our Services Quality Care for All Ages</h2>
+    </div>
+    <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+
+      <div class="service-card card-hover flex h-full flex-col rounded-3xl border bdr bg-card p-7">
+        <span class="num-badge flex h-10 w-10 items-center justify-center rounded-full bg-muted font-display text-sm font-bold" style="color: #000;">01</span>
+        <h3 class="mt-5 font-display text-lg font-bold leading-snug">የተወለጋገዱ፤ ክፍት/ፍንጭት፤ዘርዛራ እና የገጠጡ ጥርሶችን በብሬስ ማስተካከል (Brace)</h3>
+        <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted">We correct crooked, misaligned, and spaced teeth using modern braces for a perfectly aligned smile.</p>
+      </div>
+
+      <div class="service-card card-hover flex h-full flex-col rounded-3xl border bdr bg-card p-7">
+        <span class="num-badge flex h-10 w-10 items-center justify-center rounded-full bg-muted font-display text-sm font-bold" style="color: #000;">02</span>
+        <h3 class="mt-5 font-display text-lg font-bold leading-snug">የጥርስ ሥር ሕክምና (Root Canal Treatment - RCT)</h3>
+        <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted">Save damaged or infected teeth with precise root canal therapy, relieving pain and preserving your natural tooth.</p>
+      </div>
+
+      <div class="service-card card-hover flex h-full flex-col rounded-3xl border bdr bg-card p-7">
+        <span class="num-badge flex h-10 w-10 items-center justify-center rounded-full bg-muted font-display text-sm font-bold" style="color: #000;">03</span>
+        <h3 class="mt-5 font-display text-lg font-bold leading-snug">ሰው ሰራሽ ጥርስ መትከል/Artificial በተለያየ አማራጭ (Tooth Replacement)</h3>
+        <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted">Replace missing teeth with implants, bridges, or other artificial options tailored to your needs.</p>
+      </div>
+
+      <div class="service-card card-hover flex h-full flex-col rounded-3xl border bdr bg-card p-7">
+        <span class="num-badge flex h-10 w-10 items-center justify-center rounded-full bg-muted font-display text-sm font-bold" style="color: #000;">04</span>
+        <h3 class="mt-5 font-display text-lg font-bold leading-snug">ገቢ ወጪ ጥርሶችን መስራት (Denture)</h3>
+        <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted">Custom full and partial dentures to restore your smile and improve chewing function.</p>
+      </div>
+
+      <div class="service-card card-hover flex h-full flex-col rounded-3xl border bdr bg-card p-7">
+        <span class="num-badge flex h-10 w-10 items-center justify-center rounded-full bg-muted font-display text-sm font-bold" style="color: #000;">05</span>
+        <h3 class="mt-5 font-display text-lg font-bold leading-snug">የቆሸሸ ጥርስ ማጠብ (Whitening)</h3>
+        <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted">Professional whitening treatments to brighten stained teeth and give you a confident, radiant smile.</p>
+      </div>
+
+      <div class="service-card card-hover flex h-full flex-col rounded-3xl border bdr bg-card p-7">
+        <span class="num-badge flex h-10 w-10 items-center justify-center rounded-full bg-muted font-display text-sm font-bold" style="color: #000;">06</span>
+        <h3 class="mt-5 font-display text-lg font-bold leading-snug">ማይታከም ጥርስ መንቀል (Tooth Extraction)</h3>
+        <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted">Safe and painless extraction of severely damaged or impacted teeth with expert care.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="bg-page py-16 sm:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">How Our Dental Care Works</h2>
+    </div>
+    <div class="mt-12 grid items-center gap-8 lg:grid-cols-2">
+      <div class="flex flex-col gap-3">
+        <div class="step-item card-hover rounded-2xl border bdr bg-card p-5 text-left cursor-pointer">
+          <span class="font-display text-base font-bold">Comfortable and Precise Treatment</span>
+          <p class="mt-2 text-sm leading-relaxed txt-muted">Includes follow-up care and guidance maintaining your results, with our team always available.</p>
+        </div>
+        <div class="step-item card-hover rounded-2xl border bdr bg-card p-5 text-left cursor-pointer">
+          <span class="font-display text-base font-bold">Post-Treatment Care and Follow-Up</span>
+          <p class="mt-2 text-sm leading-relaxed txt-muted">In your treatment phase, we use the latest technology and techniques to deliver precise, gentle care.</p>
+        </div>
+        <div class="step-item card-hover rounded-2xl border bdr bg-card p-5 text-left cursor-pointer">
+          <span class="font-display text-base font-bold">Personalized Treatment Plan</span>
+          <p class="mt-2 text-sm leading-relaxed txt-muted">We develop a personalized treatment tailored to your specific requirements, ensuring you're informed about every option.</p>
+        </div>
+        <div class="step-item card-hover rounded-2xl border bdr bg-card p-5 text-left cursor-pointer">
+          <span class="font-display text-base font-bold">Your First Consultation</span>
+          <p class="mt-2 text-sm leading-relaxed txt-muted">Begins with a warm welcome and thorough consultation, where we take the time to understand your needs, goals, and concerns.</p>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="overflow-hidden rounded-3xl">
+          <img src="public/images/how-it-works.png" alt="A dental hygienist consulting with a patient" class="h-[420px] w-full object-cover grayscale">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-muted py-16 sm:py-24">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Common Questions About Our Dental Services</h2>
+    </div>
+      <div class="mt-12 flex flex-col gap-3">
+        <div class="faq-item rounded-2xl border bdr bg-card cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex w-full items-center justify-between gap-4 p-5 text-left">
+            <span class="font-display text-base font-semibold">What should I do in case of a dental emergency?</span>
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted chevron" style="color: #000;">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </div>
+          <div class="faq-answer">
+            <div class="px-5 pb-5 text-sm leading-relaxed txt-muted">
+              If you have a dental emergency, contact our clinic immediately. We'll guide you through the steps and schedule an appointment.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item rounded-2xl border bdr bg-card cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex w-full items-center justify-between gap-4 p-5 text-left">
+            <span class="font-display text-base font-semibold">What are the signs I need to see a dentist?</span>
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted chevron" style="color: #000;">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </div>
+          <div class="faq-answer">
+            <div class="px-5 pb-5 text-sm leading-relaxed txt-muted">
+              Persistent tooth pain, bleeding gums, sensitivity to hot or cold, and visible discoloration are all signs you should book an appointment with us.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item rounded-2xl border bdr bg-card cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex w-full items-center justify-between gap-4 p-5 text-left">
+            <span class="font-display text-base font-semibold">Do you offer teeth whitening services?</span>
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted chevron" style="color: #000;">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </div>
+          <div class="faq-answer">
+            <div class="px-5 pb-5 text-sm leading-relaxed txt-muted">
+              Yes, we offer professional in-office and take-home whitening treatments tailored to safely brighten your smile.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item rounded-2xl border bdr bg-card cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex w-full items-center justify-between gap-4 p-5 text-left">
+            <span class="font-display text-base font-semibold">How often should I visit the dentist?</span>
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted chevron" style="color: #000;">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </div>
+          <div class="faq-answer">
+            <div class="px-5 pb-5 text-sm leading-relaxed txt-muted">
+              We recommend a routine checkup and cleaning every six months, though your dentist may suggest a different schedule based on your needs.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item rounded-2xl border bdr bg-card cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex w-full items-center justify-between gap-4 p-5 text-left">
+            <span class="font-display text-base font-semibold">Are dental X-rays safe?</span>
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted chevron" style="color: #000;">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </div>
+          <div class="faq-answer">
+            <div class="px-5 pb-5 text-sm leading-relaxed txt-muted">
+              Modern dental X-rays use very low levels of radiation and are considered safe. We take every precaution to protect our patients.
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-page pb-16 sm:pb-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Reach Out for Your Smile</h2>
+    </div>
+
+    <!-- Contact Info + Map Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+      <!-- Left: Contact Cards -->
+      <div class="flex flex-col gap-4">
+        <a href="https://map.et/w51078505/getu-commercial-center#way51078505" target="_blank" rel="noopener noreferrer" class="contact-card flex items-center gap-4 rounded-2xl border bdr p-4 sm:p-5 transition-all hover:border-lime">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-lime text-lime-foreground"><svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div class="flex-1">
+            <p class="font-display font-semibold text-sm">Our Location</p>
+            <p class="text-xs txt-muted">Bole, Getu Commercial Center 3rd Floor</p>
+          </div>
+          <span class="text-xs font-medium txt-forest hidden sm:inline">View &rarr;</span>
+        </a>
+        <a href="tel:0910363238" class="contact-card flex items-center gap-4 rounded-2xl border bdr p-4 sm:p-5 transition-all hover:border-lime">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-lime text-lime-foreground"><svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></span>
+          <div class="flex-1">
+            <p class="font-display font-semibold text-sm">Call Us</p>
+            <p class="text-xs txt-muted">Tap to call</p>
+          </div>
+          <span class="text-xs font-medium txt-forest hidden sm:inline">Call &rarr;</span>
+        </a>
+        <div class="flex items-center gap-4 rounded-2xl border bdr p-4 sm:p-5">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-lime text-lime-foreground"><svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          <div class="flex-1">
+            <p class="font-display font-semibold text-sm">Working Hours</p>
+            <p class="text-xs txt-muted">Mon-Sat 8AM-8PM &bull; Sun 9AM-5PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Map -->
+      <div class="relative overflow-hidden rounded-3xl border bdr min-h-[300px] lg:min-h-full">
+        <iframe
+          title="Dr Euel Lewi clinic location map"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=38.78%2C8.98%2C38.82%2C9.02&layer=mapnik&marker=9.00%2C38.80"
+          class="absolute inset-0 w-full h-full grayscale"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Appointment Form -->
+    <div class="max-w-2xl mx-auto">
+      <form id="appointment-form" class="rounded-3xl border bdr bg-card p-6 shadow-sm sm:p-8">
+        <h3 class="font-display text-xl font-bold text-center">Book an Appointment</h3>
+        <p class="mt-2 text-sm txt-muted text-center">Fill in your details and we'll connect you via WhatsApp.</p>
+        <div class="mt-6 flex flex-col gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input type="text" name="firstName" placeholder="First Name" required class="w-full rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest">
+            <input type="text" name="lastName" placeholder="Last Name" required class="w-full rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest">
+          </div>
+          <input type="email" name="email" placeholder="Email Address" required class="w-full rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest">
+          <input type="date" name="date" placeholder="Preferred Date" required class="w-full rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest">
+          <textarea name="message" placeholder="Your Message" rows="3" class="w-full resize-none rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest"></textarea>
+          <button type="submit" class="mt-2 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-lime pl-5 pr-2 text-sm font-semibold text-lime-foreground transition-transform sc102">
+            Send via WhatsApp
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-forest txt-lime">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-page pb-16 sm:pb-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid overflow-hidden rounded-3xl bg-lime text-lime-foreground md:grid-cols-[1.4fr_1fr]">
+      <div class="p-8 sm:p-12">
+        <h2 class="font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">Don't Wait Your Smile Deserves the Best</h2>
+        <p class="mt-4 max-w-md text-sm leading-relaxed text-lime-foreground/80">Your journey to a healthier, more confident smile starts here at Dr Euel Lewi Speciality Dental Clinic.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#contact" class="inline-flex h-11 items-center gap-2 rounded-full bg-forest pl-5 pr-2 text-sm font-semibold txt-forest transition-all hover:scale-[1.03] hover:shadow-lg">
+            Schedule Appointment
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-lime text-lime-foreground">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </span>
+          </a>
+          <a href="tel:0910363238" class="inline-flex h-11 items-center gap-2 rounded-full border-2 border-forest px-5 text-sm font-semibold transition-all hover:bg-forest hover:text-forest-foreground hover:scale-[1.03]" style="color: #20301f;">
+            Call Today
+          </a>
+        </div>
+      </div>
+      <div class="relative min-h-56 cta-img-container">
+        <img src="public/images/cta-dental.png" alt="A dentist treating a patient" class="absolute inset-0 h-full w-full object-cover grayscale">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-forest txt-forest">
+  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-3">
+      <div>
+        <a href="#home" class="font-display text-xl font-bold leading-tight">
+          Dr Euel Lewi
+          <span class="block text-xs font-medium txt-forest/70">Speciality Dental Clinic</span>
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed txt-forest/70">We're dedicated to providing high-quality, compassionate dental care for patients of all ages from preventive care.</p>
+        <div class="mt-5 flex gap-2">
+          <a href="https://web.facebook.com/Lewidentalclinic/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-all">
+            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.09 0 2.24.19 2.24.19v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.9h-2.34V22c4.78-.76 8.43-4.92 8.43-9.94Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/dr.euellewispecialitydental" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-all">
+            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16Zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4Zm6.41-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-display text-base font-semibold">Quick Links</h3>
+        <ul class="mt-4 flex flex-col gap-3">
+          <li><a href="#home" class="text-sm txt-forest/70 transition-colors txt-lime-h">Home Page</a></li>
+          <li><a href="#about" class="text-sm txt-forest/70 transition-colors txt-lime-h">About Us</a></li>
+          <li><a href="#services" class="text-sm txt-forest/70 transition-colors txt-lime-h">Service</a></li>
+          <li><a href="#contact" class="text-sm txt-forest/70 transition-colors txt-lime-h">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-display text-base font-semibold">Our Services</h3>
+        <ul class="mt-4 flex flex-col gap-3">
+          <li><span class="text-sm txt-forest/70">Brace / Orthodontics</span></li>
+          <li><span class="text-sm txt-forest/70">Root Canal Treatment</span></li>
+          <li><span class="text-sm txt-forest/70">Tooth Replacement</span></li>
+          <li><span class="text-sm txt-forest/70">Denture</span></li>
+          <li><span class="text-sm txt-forest/70">Whitening</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm txt-forest/60 sm:flex-row">
+      <p>&copy; 2024 Dr Euel Lewi Speciality Dental Clinic. All Rights Reserved.</p>
+      <a href="https://t.me/RAHWA_fd" target="_blank" rel="noopener noreferrer" class="transition-colors txt-lime-h">Build by Rahwa Digitals</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Loading animation
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.getElementById('loader').classList.add('hidden-loader');
+  }, 800);
+});
+
+// Toggle mute for videos
+function toggleMute(btn) {
+  const iframe = btn.parentElement.querySelector('iframe');
+  const currentSrc = iframe.getAttribute('src');
+  if (currentSrc.includes('&mute=1')) {
+    iframe.setAttribute('src', currentSrc.replace('&mute=1', ''));
+    btn.innerHTML = '<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/></svg> Mute';
+  } else {
+    iframe.setAttribute('src', currentSrc + '&mute=1');
+    btn.innerHTML = '<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svg> Unmute';
+  }
+}
+
+// FAQ Accordion
+function toggleFaq(element) {
+  const allItems = document.querySelectorAll('.faq-item');
+  allItems.forEach(item => {
+    if (item !== element) {
+      item.classList.remove('open');
+    }
+  });
+  element.classList.toggle('open');
+}
+
+// Counter animation
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const counters = entry.target.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000;
+        const startTime = performance.now();
+        
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(easeOut * target);
+          
+          if (target >= 10000) {
+            counter.textContent = (current / 1000).toFixed(0) + 'K+';
+          } else {
+            counter.textContent = current + '+';
+          }
+          
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          }
+        }
+        requestAnimationFrame(updateCounter);
+      });
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+const aboutSection = document.getElementById('about');
+if (aboutSection) {
+  counterObserver.observe(aboutSection);
+}
+
+document.getElementById('appointment-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const fd = new FormData(this);
+  const text = `Hello, I would like to book an appointment.%0A%0AName: ${fd.get('firstName')} ${fd.get('lastName')}%0AEmail: ${fd.get('email')}%0ADate: ${fd.get('date')}%0AMessage: ${fd.get('message')}`;
+  window.open(`https://wa.me/251910363238?text=${text}`, '_blank');
+});
+
+// Scroll reveal animation
+const revealElements = document.querySelectorAll('section h2, section > div, .service-card, .contact-card, .faq-item');
+revealElements.forEach(el => el.classList.add('reveal'));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+revealElements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
