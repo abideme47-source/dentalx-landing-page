@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr Euel Lewi — Speciality Dental Clinic</title>
+  <link rel="icon" type="image/png" href="public/images/logo.png">
+  <link rel="apple-touch-icon" href="public/images/logo.png">
   <meta name="description" content="Dr Euel Lewi Speciality Dental Clinic offers restorative solutions, root canal therapy, smile brightening, emergency care and advanced orthodontics for all ages.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -806,6 +808,7 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
