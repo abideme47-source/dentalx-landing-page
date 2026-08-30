@@ -352,21 +352,24 @@
         <span class="block text-xs font-medium txt-forest/70">Speciality Dental Clinic</span>
       </a>
     </div>
-    <nav class="hidden items-center gap-8 lg:flex">
-      <a href="#home" class="nav-link text-sm font-medium txt-forest/80 transition-colors txt-lime-h">Home</a>
-      <a href="#about" class="nav-link text-sm font-medium txt-forest/80 transition-colors txt-lime-h">About</a>
-      <a href="#services" class="nav-link text-sm font-medium txt-forest/80 transition-colors txt-lime-h">Service</a>
-      <a href="#contact" class="nav-link text-sm font-medium txt-forest/80 transition-colors txt-lime-h">Contact</a>
+     <nav class="hidden items-center gap-8 lg:flex">
+      <a href="#home" class="nav-link text-sm font-medium txt-forest-80 transition-colors txt-lime-h" data-i18n="nav.home">Home</a>
+      <a href="#about" class="nav-link text-sm font-medium txt-forest-80 transition-colors txt-lime-h" data-i18n="nav.about">About</a>
+      <a href="#services" class="nav-link text-sm font-medium txt-forest-80 transition-colors txt-lime-h" data-i18n="nav.services">Service</a>
+      <a href="#contact" class="nav-link text-sm font-medium txt-forest-80 transition-colors txt-lime-h" data-i18n="nav.contact">Contact</a>
     </nav>
      <div class="flex items-center gap-3">
-       <a href="tel:0910363238" class="hidden items-center gap-3 sm:flex txt-forest/80 transition-colors txt-lime-h">
-         <span class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
-           <svg class="h-4 w-4 txt-lime" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.92.4 1.78.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c1.03.32 1.89.59 2.81.72A2 2 0 0122 16.92z"/></svg>
-         </span>
-         <span class="text-sm font-medium">Call us</span>
-       </a>
-       <a href="#contact" class="hidden h-11 items-center gap-2 rounded-full bg-lime px-2 pl-4 text-sm font-semibold text-lime-foreground transition-transform sc103 md:flex">
-         Let's Talk
+      <button id="lang-toggle" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-sm font-medium transition-all hover:bg-white/10" aria-label="Switch Language">
+        <span id="lang-label">EN</span>
+      </button>
+      <a href="tel:0910363238" class="hidden items-center gap-3 sm:flex txt-forest-80 transition-colors txt-lime-h">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
+          <svg class="h-4 w-4 txt-lime" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.92.4 1.78.72 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c1.03.32 1.89.59 2.81.72A2 2 0 0122 16.92z"/></svg>
+        </span>
+        <span class="text-sm font-medium" data-i18n="nav.call">Call us</span>
+      </a>
+      <a href="#contact" class="hidden h-11 items-center gap-2 rounded-full bg-lime px-2 pl-4 text-sm font-semibold text-lime-foreground transition-transform sc103 md:flex" data-i18n="nav.letsTalk">
+        Let's Talk
          <span class="flex h-8 w-8 items-center justify-center rounded-full bg-forest txt-lime">
            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
          </span>
@@ -378,10 +381,10 @@
 <!-- Hero -->
 <section class="relative bg-forest txt-forest">
   <div class="mx-auto max-w-7xl px-4 pb-0 sm:px-6 lg:px-8">
-    <div class="relative pt-6 text-center">
-      <h1 class="font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-        Your smile<br>
-        <span class="txt-lime">deserves the best.</span>
+    <div class="relative pt-6 pb-8 text-center">
+      <h1 class="font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl" data-i18n="hero.title">
+        Your Smile<br>
+        <span class="txt-forest-90">Deserves The Best!</span>
       </h1>
     </div>
       <div class="relative mt-8 overflow-hidden rounded-t-[2rem] img-zoom-container">
@@ -395,13 +398,13 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="grid items-start gap-10 lg:grid-cols-2">
       <div>
-        <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Building Relationships One Smile at a Time</h2>
+         <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl" data-i18n="about.title">Building Relationships One Smile at a Time</h2>
          <div class="mt-6">
          <div class="relative overflow-hidden rounded-3xl about-img">
             <img src="public/images/about-exam.png" alt="A smiling patient during a dental examination" class="h-64 w-full object-cover sm:h-72" loading="lazy" decoding="async">
            <div class="absolute bottom-4 left-4 rounded-2xl bg-lime px-5 py-3 text-lime-foreground">
              <p class="font-display text-2xl font-bold counter" data-target="10000">0</p>
-             <p class="text-xs font-medium">Happy Patients</p>
+              <p class="text-xs font-medium" data-i18n="about.happyPatients">Happy Patients</p>
            </div>
          </div>
          </div>
@@ -411,10 +414,10 @@
             <img src="public/images/about-dentist.png" alt="A confident dentist in a modern clinic" class="h-72 w-full object-cover sm:h-80" loading="lazy" decoding="async">
            <div class="absolute left-4 top-4 rounded-2xl bg-forest px-5 py-3 txt-forest">
              <p class="font-display text-2xl font-bold counter" data-target="8">0</p>
-             <p class="text-xs font-medium txt-forest/70">Years of Experience</p>
+              <p class="text-xs font-medium txt-forest-70" data-i18n="about.yearsExperience">Years of Experience</p>
            </div>
          </div>
-        <p class="leading-relaxed txt-muted">We're more than just a dental clinic — we're your partners in health, here to guide you on a journey toward a brighter, healthier smile. Our dedicated team combines years of experience with a genuine passion for patient care.</p>
+         <p class="leading-relaxed txt-muted" data-i18n="about.description">We're more than just a dental clinic — we're your partners in health, here to guide you on a journey toward a brighter, healthier smile. Our dedicated team combines years of experience with a genuine passion for patient care.</p>
       </div>
     </div>
   </div>
@@ -424,44 +427,44 @@
 <section id="services" class="bg-muted py-16 sm:py-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-2xl text-center">
-      <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Explore Our Services Quality Care for All Ages</h2>
+       <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl" data-i18n="services.title">Explore Our Services Quality Care for All Ages</h2>
     </div>
     <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
 
       <div class="service-card card-hover flex h-full flex-col rounded-3xl border bdr bg-card p-7">
         <span class="num-badge flex h-10 w-10 items-center justify-center rounded-full bg-muted font-display text-sm font-bold" style="color: #000;">01</span>
-        <h3 class="mt-5 font-display text-lg font-bold leading-snug">የተወለጋገዱ፤ ክፍት/ፍንጭት፤ዘርዛራ እና የገጠጡ ጥርሶችን በብሬስ ማስተካከል (Brace)</h3>
-        <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted">We correct crooked, misaligned, and spaced teeth using modern braces for a perfectly aligned smile.</p>
+         <h3 class="mt-5 font-display text-lg font-bold leading-snug" data-i18n="services.brace">Brace / Orthodontics</h3>
+         <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted" data-i18n="services.braceDesc">We correct crooked, misaligned, and spaced teeth using modern braces for a perfectly aligned smile.</p>
       </div>
 
       <div class="service-card card-hover flex h-full flex-col rounded-3xl border bdr bg-card p-7">
         <span class="num-badge flex h-10 w-10 items-center justify-center rounded-full bg-muted font-display text-sm font-bold" style="color: #000;">02</span>
-        <h3 class="mt-5 font-display text-lg font-bold leading-snug">የጥርስ ሥር ሕክምና (Root Canal Treatment - RCT)</h3>
-        <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted">Save damaged or infected teeth with precise root canal therapy, relieving pain and preserving your natural tooth.</p>
+         <h3 class="mt-5 font-display text-lg font-bold leading-snug" data-i18n="services.rootCanal">Root Canal Treatment</h3>
+         <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted" data-i18n="services.rootCanalDesc">Save damaged or infected teeth with precise root canal therapy, relieving pain and preserving your natural tooth.</p>
       </div>
 
       <div class="service-card card-hover flex h-full flex-col rounded-3xl border bdr bg-card p-7">
         <span class="num-badge flex h-10 w-10 items-center justify-center rounded-full bg-muted font-display text-sm font-bold" style="color: #000;">03</span>
-        <h3 class="mt-5 font-display text-lg font-bold leading-snug">ሰው ሰራሽ ጥርስ መትከል/Artificial በተለያየ አማራጭ (Tooth Replacement)</h3>
-        <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted">Replace missing teeth with implants, bridges, or other artificial options tailored to your needs.</p>
+         <h3 class="mt-5 font-display text-lg font-bold leading-snug" data-i18n="services.toothReplacement">Tooth Replacement</h3>
+         <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted" data-i18n="services.toothReplacementDesc">Replace missing teeth with implants, bridges, or other artificial options tailored to your needs.</p>
       </div>
 
       <div class="service-card card-hover flex h-full flex-col rounded-3xl border bdr bg-card p-7">
         <span class="num-badge flex h-10 w-10 items-center justify-center rounded-full bg-muted font-display text-sm font-bold" style="color: #000;">04</span>
-        <h3 class="mt-5 font-display text-lg font-bold leading-snug">ገቢ ወጪ ጥርሶችን መስራት (Denture)</h3>
-        <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted">Custom full and partial dentures to restore your smile and improve chewing function.</p>
+         <h3 class="mt-5 font-display text-lg font-bold leading-snug" data-i18n="services.denture">Denture</h3>
+         <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted" data-i18n="services.dentureDesc">Custom full and partial dentures to restore your smile and improve chewing function.</p>
       </div>
 
       <div class="service-card card-hover flex h-full flex-col rounded-3xl border bdr bg-card p-7">
         <span class="num-badge flex h-10 w-10 items-center justify-center rounded-full bg-muted font-display text-sm font-bold" style="color: #000;">05</span>
-        <h3 class="mt-5 font-display text-lg font-bold leading-snug">የቆሸሸ ጥርስ ማጠብ (Whitening)</h3>
-        <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted">Professional whitening treatments to brighten stained teeth and give you a confident, radiant smile.</p>
+         <h3 class="mt-5 font-display text-lg font-bold leading-snug" data-i18n="services.whitening">Whitening</h3>
+         <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted" data-i18n="services.whiteningDesc">Professional whitening treatments to brighten stained teeth and give you a confident, radiant smile.</p>
       </div>
 
       <div class="service-card card-hover flex h-full flex-col rounded-3xl border bdr bg-card p-7">
         <span class="num-badge flex h-10 w-10 items-center justify-center rounded-full bg-muted font-display text-sm font-bold" style="color: #000;">06</span>
-        <h3 class="mt-5 font-display text-lg font-bold leading-snug">ማይታከም ጥርስ መንቀል (Tooth Extraction)</h3>
-        <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted">Safe and painless extraction of severely damaged or impacted teeth with expert care.</p>
+         <h3 class="mt-5 font-display text-lg font-bold leading-snug" data-i18n="services.extraction">Tooth Extraction</h3>
+         <p class="mt-3 flex-1 text-sm leading-relaxed txt-muted" data-i18n="services.extractionDesc">Safe and painless extraction of severely damaged or impacted teeth with expert care.</p>
       </div>
 
     </div>
@@ -472,25 +475,25 @@
 <section class="bg-page py-16 sm:py-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-2xl text-center">
-      <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">How Our Dental Care Works</h2>
+       <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl" data-i18n="howItWorks.title">How Our Dental Care Works</h2>
     </div>
     <div class="mt-12 grid items-center gap-8 lg:grid-cols-2">
       <div class="flex flex-col gap-3">
         <div class="step-item card-hover rounded-2xl border bdr bg-card p-5 text-left cursor-pointer">
-          <span class="font-display text-base font-bold">Comfortable and Precise Treatment</span>
-          <p class="mt-2 text-sm leading-relaxed txt-muted">Includes follow-up care and guidance maintaining your results, with our team always available.</p>
+           <span class="font-display text-base font-bold" data-i18n="howItWorks.step4.title">Comfortable and Precise Treatment</span>
+            <p class="mt-2 text-sm leading-relaxed txt-muted" data-i18n="howItWorks.step4.desc">Includes follow-up care and guidance maintaining your results, with our team always available.</p>
         </div>
         <div class="step-item card-hover rounded-2xl border bdr bg-card p-5 text-left cursor-pointer">
-          <span class="font-display text-base font-bold">Post-Treatment Care and Follow-Up</span>
-          <p class="mt-2 text-sm leading-relaxed txt-muted">In your treatment phase, we use the latest technology and techniques to deliver precise, gentle care.</p>
+           <span class="font-display text-base font-bold" data-i18n="howItWorks.step3.title">Post-Treatment Care and Follow-Up</span>
+            <p class="mt-2 text-sm leading-relaxed txt-muted" data-i18n="howItWorks.step3.desc">In your treatment phase, we use the latest technology and techniques to deliver precise, gentle care.</p>
         </div>
         <div class="step-item card-hover rounded-2xl border bdr bg-card p-5 text-left cursor-pointer">
-          <span class="font-display text-base font-bold">Personalized Treatment Plan</span>
-          <p class="mt-2 text-sm leading-relaxed txt-muted">We develop a personalized treatment tailored to your specific requirements, ensuring you're informed about every option.</p>
+           <span class="font-display text-base font-bold" data-i18n="howItWorks.step2.title">Personalized Treatment Plan</span>
+            <p class="mt-2 text-sm leading-relaxed txt-muted" data-i18n="howItWorks.step2.desc">We develop a personalized treatment tailored to your specific requirements, ensuring you're informed about every option.</p>
         </div>
         <div class="step-item card-hover rounded-2xl border bdr bg-card p-5 text-left cursor-pointer">
-          <span class="font-display text-base font-bold">Your First Consultation</span>
-          <p class="mt-2 text-sm leading-relaxed txt-muted">Begins with a warm welcome and thorough consultation, where we take the time to understand your needs, goals, and concerns.</p>
+           <span class="font-display text-base font-bold" data-i18n="howItWorks.step1.title">Your First Consultation</span>
+            <p class="mt-2 text-sm leading-relaxed txt-muted" data-i18n="howItWorks.step1.desc">Begins with a warm welcome and thorough consultation, where we take the time to understand your needs, goals, and concerns.</p>
         </div>
       </div>
       <div class="relative">
@@ -506,72 +509,72 @@
 <section class="bg-muted py-16 sm:py-24">
   <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
     <div class="text-center">
-      <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Common Questions About Our Dental Services</h2>
+       <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl" data-i18n="faq.title">Common Questions About Our Dental Services</h2>
     </div>
       <div class="mt-12 flex flex-col gap-3">
         <div class="faq-item rounded-2xl border bdr bg-card cursor-pointer" onclick="toggleFaq(this)">
           <div class="flex w-full items-center justify-between gap-4 p-5 text-left">
-            <span class="font-display text-base font-semibold">What should I do in case of a dental emergency?</span>
+             <span class="font-display text-base font-semibold" data-i18n="faq.q1.question">What should I do in case of a dental emergency?</span>
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted chevron" style="color: #000;">
               <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </span>
           </div>
           <div class="faq-answer">
-            <div class="px-5 pb-5 text-sm leading-relaxed txt-muted">
-              If you have a dental emergency, contact our clinic immediately. We'll guide you through the steps and schedule an appointment.
-            </div>
+             <div class="px-5 pb-5 text-sm leading-relaxed txt-muted" data-i18n="faq.q1.answer">
+               If you have a dental emergency, contact our clinic immediately. We'll guide you through the steps and schedule an appointment.
+             </div>
           </div>
         </div>
         <div class="faq-item rounded-2xl border bdr bg-card cursor-pointer" onclick="toggleFaq(this)">
           <div class="flex w-full items-center justify-between gap-4 p-5 text-left">
-            <span class="font-display text-base font-semibold">What are the signs I need to see a dentist?</span>
+             <span class="font-display text-base font-semibold" data-i18n="faq.q2.question">What are the signs I need to see a dentist?</span>
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted chevron" style="color: #000;">
               <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </span>
           </div>
           <div class="faq-answer">
-            <div class="px-5 pb-5 text-sm leading-relaxed txt-muted">
-              Persistent tooth pain, bleeding gums, sensitivity to hot or cold, and visible discoloration are all signs you should book an appointment with us.
-            </div>
+             <div class="px-5 pb-5 text-sm leading-relaxed txt-muted" data-i18n="faq.q2.answer">
+               Persistent tooth pain, bleeding gums, sensitivity to hot or cold, and visible discoloration are all signs you should book an appointment with us.
+             </div>
           </div>
         </div>
         <div class="faq-item rounded-2xl border bdr bg-card cursor-pointer" onclick="toggleFaq(this)">
           <div class="flex w-full items-center justify-between gap-4 p-5 text-left">
-            <span class="font-display text-base font-semibold">Do you offer teeth whitening services?</span>
+             <span class="font-display text-base font-semibold" data-i18n="faq.q3.question">Do you offer teeth whitening services?</span>
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted chevron" style="color: #000;">
               <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </span>
           </div>
           <div class="faq-answer">
-            <div class="px-5 pb-5 text-sm leading-relaxed txt-muted">
-              Yes, we offer professional in-office and take-home whitening treatments tailored to safely brighten your smile.
-            </div>
+             <div class="px-5 pb-5 text-sm leading-relaxed txt-muted" data-i18n="faq.q3.answer">
+               Yes, we offer professional in-office and take-home whitening treatments tailored to safely brighten your smile.
+             </div>
           </div>
         </div>
         <div class="faq-item rounded-2xl border bdr bg-card cursor-pointer" onclick="toggleFaq(this)">
           <div class="flex w-full items-center justify-between gap-4 p-5 text-left">
-            <span class="font-display text-base font-semibold">How often should I visit the dentist?</span>
+             <span class="font-display text-base font-semibold" data-i18n="faq.q4.question">How often should I visit the dentist?</span>
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted chevron" style="color: #000;">
               <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </span>
           </div>
           <div class="faq-answer">
-            <div class="px-5 pb-5 text-sm leading-relaxed txt-muted">
-              We recommend a routine checkup and cleaning every six months, though your dentist may suggest a different schedule based on your needs.
-            </div>
+             <div class="px-5 pb-5 text-sm leading-relaxed txt-muted" data-i18n="faq.q4.answer">
+               We recommend a routine checkup and cleaning every six months, though your dentist may suggest a different schedule based on your needs.
+             </div>
           </div>
         </div>
         <div class="faq-item rounded-2xl border bdr bg-card cursor-pointer" onclick="toggleFaq(this)">
           <div class="flex w-full items-center justify-between gap-4 p-5 text-left">
-            <span class="font-display text-base font-semibold">Are dental X-rays safe?</span>
+             <span class="font-display text-base font-semibold" data-i18n="faq.q5.question">Are dental X-rays safe?</span>
             <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted chevron" style="color: #000;">
               <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </span>
           </div>
           <div class="faq-answer">
-            <div class="px-5 pb-5 text-sm leading-relaxed txt-muted">
-              Modern dental X-rays use very low levels of radiation and are considered safe. We take every precaution to protect our patients.
-            </div>
+             <div class="px-5 pb-5 text-sm leading-relaxed txt-muted" data-i18n="faq.q5.answer">
+               Modern dental X-rays use very low levels of radiation and are considered safe. We take every precaution to protect our patients.
+             </div>
           </div>
         </div>
       </div>
@@ -582,7 +585,7 @@
 <section id="contact" class="bg-page pb-16 sm:pb-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-10">
-      <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl">Reach Out for Your Smile</h2>
+       <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl" data-i18n="contact.title">Reach Out for Your Smile</h2>
     </div>
 
     <!-- Contact Info + Map Row -->
@@ -592,24 +595,24 @@
         <a href="https://map.et/w51078505/getu-commercial-center#way51078505" target="_blank" rel="noopener noreferrer" class="contact-card flex items-center gap-4 rounded-2xl border bdr p-4 sm:p-5 transition-all hover:border-lime">
           <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-lime text-lime-foreground"><svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
           <div class="flex-1">
-            <p class="font-display font-semibold text-sm">Our Location</p>
-            <p class="text-xs txt-muted">Bole, Getu Commercial Center 3rd Floor</p>
+             <p class="font-display font-semibold text-sm" data-i18n="contact.location">Our Location</p>
+             <p class="text-xs txt-muted" data-i18n="contact.locationAddress">Bole, Getu Commercial Center 3rd Floor</p>
           </div>
           <span class="text-xs font-medium txt-forest hidden sm:inline">View &rarr;</span>
         </a>
         <a href="tel:0910363238" class="contact-card flex items-center gap-4 rounded-2xl border bdr p-4 sm:p-5 transition-all hover:border-lime">
           <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-lime text-lime-foreground"><svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></span>
           <div class="flex-1">
-            <p class="font-display font-semibold text-sm">Call Us</p>
-            <p class="text-xs txt-muted">Tap to call</p>
+             <p class="font-display font-semibold text-sm" data-i18n="contact.call">Call Us</p>
+             <p class="text-xs txt-muted" data-i18n="contact.callDesc">Tap to call</p>
           </div>
           <span class="text-xs font-medium txt-forest hidden sm:inline">Call &rarr;</span>
         </a>
         <div class="flex items-center gap-4 rounded-2xl border bdr p-4 sm:p-5">
           <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-lime text-lime-foreground"><svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
           <div class="flex-1">
-            <p class="font-display font-semibold text-sm">Working Hours</p>
-            <p class="text-xs txt-muted">Mon-Sat 8AM-8PM &bull; Sun 9AM-5PM</p>
+             <p class="font-display font-semibold text-sm" data-i18n="contact.hours">Working Hours</p>
+             <p class="text-xs txt-muted" data-i18n="contact.hoursDesc">Mon-Sat 8AM-8PM &bull; Sun 9AM-5PM</p>
           </div>
         </div>
       </div>
@@ -628,18 +631,18 @@
     <!-- Appointment Form -->
     <div class="max-w-2xl mx-auto">
       <form id="appointment-form" class="rounded-3xl border bdr bg-card p-6 shadow-sm sm:p-8">
-        <h3 class="font-display text-xl font-bold text-center">Book an Appointment</h3>
-        <p class="mt-2 text-sm txt-muted text-center">Fill in your details and we'll connect you via WhatsApp.</p>
+         <h3 class="font-display text-xl font-bold text-center" data-i18n="contact.formTitle">Book an Appointment</h3>
+         <p class="mt-2 text-sm txt-muted text-center" data-i18n="contact.formDesc">Fill in your details and we'll connect you via WhatsApp.</p>
         <div class="mt-6 flex flex-col gap-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input type="text" name="firstName" placeholder="First Name" required class="w-full rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest">
-            <input type="text" name="lastName" placeholder="Last Name" required class="w-full rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest">
+             <input type="text" name="firstName" placeholder="First Name" required class="w-full rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest" data-i18n-placeholder="contact.firstName">
+             <input type="text" name="lastName" placeholder="Last Name" required class="w-full rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest" data-i18n-placeholder="contact.lastName">
           </div>
-          <input type="email" name="email" placeholder="Email Address" required class="w-full rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest">
-          <input type="date" name="date" placeholder="Preferred Date" required class="w-full rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest">
-          <textarea name="message" placeholder="Your Message" rows="3" class="w-full resize-none rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest"></textarea>
-          <button type="submit" class="mt-2 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-lime pl-5 pr-2 text-sm font-semibold text-lime-foreground transition-transform sc102">
-            Send via WhatsApp
+           <input type="email" name="email" placeholder="Email Address" required class="w-full rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest" data-i18n-placeholder="contact.email">
+           <input type="date" name="date" placeholder="Preferred Date" required class="w-full rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest" data-i18n-placeholder="contact.date">
+           <textarea name="message" placeholder="Your Message" rows="3" class="w-full resize-none rounded-xl border bdr bg-page px-4 py-3 text-sm outline-none transition-colors placeholder:txt-muted focus:border-forest" data-i18n-placeholder="contact.message"></textarea>
+           <button type="submit" class="mt-2 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-lime pl-5 pr-2 text-sm font-semibold text-lime-foreground transition-transform sc102" data-i18n="contact.submit">
+             Send via WhatsApp
             <span class="flex h-8 w-8 items-center justify-center rounded-full bg-forest txt-lime">
               <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
             </span>
@@ -655,18 +658,18 @@
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="grid overflow-hidden rounded-3xl bg-lime text-lime-foreground md:grid-cols-[1.4fr_1fr]">
       <div class="p-8 sm:p-12">
-        <h2 class="font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">Don't Wait Your Smile Deserves the Best</h2>
-        <p class="mt-4 max-w-md text-sm leading-relaxed text-lime-foreground/80">Your journey to a healthier, more confident smile starts here at Dr Euel Lewi Speciality Dental Clinic.</p>
+         <h2 class="font-display text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl" data-i18n="cta.title">Don't Wait Your Smile Deserves the Best</h2>
+         <p class="mt-4 max-w-md text-sm leading-relaxed text-lime-foreground/80" data-i18n="cta.subtitle">Your journey to a healthier, more confident smile starts here at Dr Euel Lewi Speciality Dental Clinic.</p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#contact" class="inline-flex h-11 items-center gap-2 rounded-full bg-forest pl-5 pr-2 text-sm font-semibold txt-forest transition-all hover:scale-[1.03] hover:shadow-lg">
-            Schedule Appointment
+           <a href="#contact" class="inline-flex h-11 items-center gap-2 rounded-full bg-forest pl-5 pr-2 text-sm font-semibold txt-forest transition-all hover:scale-[1.03] hover:shadow-lg" data-i18n="cta.schedule">
+             Schedule Appointment
             <span class="flex h-8 w-8 items-center justify-center rounded-full bg-lime text-lime-foreground">
               <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
             </span>
           </a>
-          <a href="tel:0910363238" class="inline-flex h-11 items-center gap-2 rounded-full border-2 border-forest px-5 text-sm font-semibold transition-all hover:bg-forest hover:text-forest-foreground hover:scale-[1.03]" style="color: #20301f;">
-            Call Today
-          </a>
+           <a href="tel:0910363238" class="inline-flex h-11 items-center gap-2 rounded-full border-2 border-forest px-5 text-sm font-semibold transition-all hover:bg-forest hover:text-forest-foreground hover:scale-[1.03]" style="color: #20301f;" data-i18n="cta.call">
+             Call Today
+           </a>
         </div>
       </div>
       <div class="relative min-h-56 cta-img-container">
@@ -690,7 +693,7 @@
             <span class="block text-xs font-medium txt-forest/70">Speciality Dental Clinic</span>
           </a>
         </div>
-        <p class="mt-4 max-w-xs text-sm leading-relaxed txt-forest/70">We're dedicated to providing high-quality, compassionate dental care for patients of all ages from preventive care.</p>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed txt-forest-70" data-i18n="footer.description">We're dedicated to providing high-quality, compassionate dental care for patients of all ages from preventive care.</p>
         <div class="mt-5 flex gap-2">
           <a href="https://web.facebook.com/Lewidentalclinic/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-all">
             <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.49-3.91 3.78-3.91 1.09 0 2.24.19 2.24.19v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.44 2.9h-2.34V22c4.78-.76 8.43-4.92 8.43-9.94Z"/></svg>
@@ -704,29 +707,29 @@
         </div>
       </div>
       <div>
-        <h3 class="font-display text-base font-semibold">Quick Links</h3>
+         <h3 class="font-display text-base font-semibold" data-i18n="footer.quickLinks">Quick Links</h3>
         <ul class="mt-4 flex flex-col gap-3">
-          <li><a href="#home" class="text-sm txt-forest/70 transition-colors txt-lime-h">Home Page</a></li>
-          <li><a href="#about" class="text-sm txt-forest/70 transition-colors txt-lime-h">About Us</a></li>
-          <li><a href="#services" class="text-sm txt-forest/70 transition-colors txt-lime-h">Service</a></li>
-          <li><a href="#contact" class="text-sm txt-forest/70 transition-colors txt-lime-h">Contact</a></li>
+           <li><a href="#home" class="text-sm txt-forest-70 transition-colors txt-lime-h" data-i18n="footer.home">Home Page</a></li>
+           <li><a href="#about" class="text-sm txt-forest-70 transition-colors txt-lime-h" data-i18n="footer.about">About Us</a></li>
+           <li><a href="#services" class="text-sm txt-forest-70 transition-colors txt-lime-h" data-i18n="footer.services">Service</a></li>
+           <li><a href="#contact" class="text-sm txt-forest-70 transition-colors txt-lime-h" data-i18n="footer.contact">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="font-display text-base font-semibold">Our Services</h3>
-        <ul class="mt-4 flex flex-col gap-3">
-          <li><span class="text-sm txt-forest/70">Brace / Orthodontics</span></li>
-          <li><span class="text-sm txt-forest/70">Root Canal Treatment</span></li>
-          <li><span class="text-sm txt-forest/70">Tooth Replacement</span></li>
-          <li><span class="text-sm txt-forest/70">Denture</span></li>
-          <li><span class="text-sm txt-forest/70">Whitening</span></li>
-        </ul>
+         <h3 class="font-display text-base font-semibold" data-i18n="footer.ourServices">Our Services</h3>
+         <ul class="mt-4 flex flex-col gap-3">
+           <li><span class="text-sm txt-forest-70" data-i18n="footer.brace">Brace / Orthodontics</span></li>
+           <li><span class="text-sm txt-forest-70" data-i18n="footer.rootCanal">Root Canal Treatment</span></li>
+           <li><span class="text-sm txt-forest-70" data-i18n="footer.toothReplacement">Tooth Replacement</span></li>
+           <li><span class="text-sm txt-forest-70" data-i18n="footer.denture">Denture</span></li>
+           <li><span class="text-sm txt-forest-70" data-i18n="footer.whitening">Whitening</span></li>
+         </ul>
       </div>
     </div>
-    <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm txt-forest/60 sm:flex-row">
-      <p>&copy; 2024 Dr Euel Lewi Speciality Dental Clinic. All Rights Reserved.</p>
-      <a href="https://t.me/RAHWA_fd" target="_blank" rel="noopener noreferrer" class="transition-colors txt-lime-h">Build by Rahwa Digitals</a>
-    </div>
+     <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm txt-forest-60 sm:flex-row">
+       <p data-i18n="footer.copyright">&copy; 2024 Dr Euel Lewi Speciality Dental Clinic. All Rights Reserved.</p>
+       <a href="https://t.me/RAHWA_fd" target="_blank" rel="noopener noreferrer" class="transition-colors txt-lime-h" data-i18n="footer.builtBy">Build by Rahwa Digitals</a>
+     </div>
   </div>
 </footer>
 
@@ -832,6 +835,292 @@ window.addEventListener('scroll', function() {
     });
   }, 100);
 }, { passive: true });
+
+// ========================================
+// MULTI-LANGUAGE SYSTEM
+// ========================================
+
+const translations = {
+  en: {
+    nav: {
+      home: "Home",
+      about: "About",
+      services: "Service",
+      contact: "Contact",
+      call: "Call us",
+      letsTalk: "Let's Talk"
+    },
+    hero: {
+      title: "Your Smile<br><span class='txt-forest-90'>Deserves The Best!</span>"
+    },
+    about: {
+      title: "Building Relationships One Smile at a Time",
+      happyPatients: "Happy Patients",
+      yearsExperience: "Years of Experience",
+      description: "We're more than just a dental clinic — we're your partners in health, here to guide you on a journey toward a brighter, healthier smile. Our dedicated team combines years of experience with a genuine passion for patient care."
+    },
+    services: {
+      title: "Explore Our Services Quality Care for All Ages",
+      brace: "Brace / Orthodontics",
+      rootCanal: "Root Canal Treatment",
+      toothReplacement: "Tooth Replacement",
+      denture: "Denture",
+      whitening: "Whitening",
+      extraction: "Tooth Extraction",
+      braceDesc: "We correct crooked, misaligned, and spaced teeth using modern braces for a perfectly aligned smile.",
+      rootCanalDesc: "Save damaged or infected teeth with precise root canal therapy, relieving pain and preserving your natural tooth.",
+      toothReplacementDesc: "Replace missing teeth with implants, bridges, or other artificial options tailored to your needs.",
+      dentureDesc: "Custom full and partial dentures to restore your smile and improve chewing function.",
+      whiteningDesc: "Professional whitening treatments to brighten stained teeth and give you a confident, radiant smile.",
+      extractionDesc: "Safe and painless extraction of severely damaged or impacted teeth with expert care."
+    },
+    howItWorks: {
+      title: "How Our Dental Care Works",
+      "step1": {
+        title: "Your First Consultation",
+        desc: "Begins with a warm welcome and thorough consultation, where we take the time to understand your needs, goals, and concerns."
+      },
+      "step2": {
+        title: "Personalized Treatment Plan",
+        desc: "We develop a personalized treatment tailored to your specific requirements, ensuring you're informed about every option."
+      },
+      "step3": {
+        title: "Post-Treatment Care and Follow-Up",
+        desc: "In your treatment phase, we use the latest technology and techniques to deliver precise, gentle care."
+      },
+      "step4": {
+        title: "Comfortable and Precise Treatment",
+        desc: "Includes follow-up care and guidance maintaining your results, with our team always available."
+      }
+    },
+    faq: {
+      title: "Common Questions About Our Dental Services",
+      "q1": {
+        question: "What should I do in case of a dental emergency?",
+        answer: "If you have a dental emergency, contact our clinic immediately. We'll guide you through the steps and schedule an appointment."
+      },
+      "q2": {
+        question: "What are the signs I need to see a dentist?",
+        answer: "Persistent tooth pain, bleeding gums, sensitivity to hot or cold, and visible discoloration are all signs you should book an appointment with us."
+      },
+      "q3": {
+        question: "Do you offer teeth whitening services?",
+        answer: "Yes, we offer professional in-office and take-home whitening treatments tailored to safely brighten your smile."
+      },
+      "q4": {
+        question: "How often should I visit the dentist?",
+        answer: "We recommend a routine checkup and cleaning every six months, though your dentist may suggest a different schedule based on your needs."
+      },
+      "q5": {
+        question: "Are dental X-rays safe?",
+        answer: "Modern dental X-rays use very low levels of radiation and are considered safe. We take every precaution to protect our patients."
+      }
+    },
+    contact: {
+      title: "Reach Out for Your Smile",
+      location: "Our Location",
+      locationAddress: "Bole, Getu Commercial Center 3rd Floor",
+      call: "Call Us",
+      callDesc: "Tap to call",
+      hours: "Working Hours",
+      hoursDesc: "Mon-Sat 8AM-8PM • Sun 9AM-5PM",
+      formTitle: "Book an Appointment",
+      formDesc: "Fill in your details and we'll connect you via WhatsApp.",
+      firstName: "First Name",
+      lastName: "Last Name",
+      email: "Email Address",
+      date: "Preferred Date",
+      message: "Your Message",
+      submit: "Send via WhatsApp"
+    },
+    cta: {
+      title: "Don't Wait Your Smile Deserves the Best",
+      subtitle: "Your journey to a healthier, more confident smile starts here at Dr Euel Lewi Speciality Dental Clinic.",
+      schedule: "Schedule Appointment",
+      call: "Call Today"
+    },
+    footer: {
+      description: "We're dedicated to providing high-quality, compassionate dental care for patients of all ages from preventive care.",
+      quickLinks: "Quick Links",
+      home: "Home Page",
+      about: "About Us",
+      services: "Service",
+      contact: "Contact",
+      ourServices: "Our Services",
+      brace: "Brace / Orthodontics",
+      rootCanal: "Root Canal Treatment",
+      toothReplacement: "Tooth Replacement",
+      denture: "Denture",
+      whitening: "Whitening",
+      copyright: "© 2024 Dr Euel Lewi Speciality Dental Clinic. All Rights Reserved.",
+      builtBy: "Build by Rahwa Digitals"
+    }
+  },
+  am: {
+    nav: {
+      home: "ዋና ገጽ",
+      about: "ስለ እኛ",
+      services: "አገልግሎቶች",
+      contact: "እኛን ለማግኘት",
+      call: "ይደውሉልን",
+      letsTalk: "እንነጋገር"
+    },
+    hero: {
+      title: "በዕንቁ ባለሙያዎች የታገዘ ፈገግታ ያግኙ!"
+    },
+    about: {
+      title: "በእያንዳንዱ ፈገግታ ጠንካራ ግንኙነትን እንገነባለን።",
+      happyPatients: "ደስተኛ ታካሚዎች",
+      yearsExperience: "የብዙ ዓመታት ልምድ",
+      description: "እኛ ከጥርስ ክሊኒክ በላይ ነን — ወደ ተሻለ እና ጤናማ ፈገግታ አብሮዎ የሚራመድ የጤና አጋርዎ ነን። ቁርጠኛ ቡድናችን የዓመታት ልምድን ለታካሚዎች ካለው እውነተኛ ፍቅር እና እንክብካቤ ጋር አዋህዶ ይሰጣል።"
+    },
+    services: {
+      title: "አገልግሎቶቻችንን ይመልከቱ፤ ለሁሉም የዕድሜ ክልል የሚሆን ጥራት ያለው እንክብካቤ",
+      brace: "የተወለጋገዱ፣ የተራራቁ እና ክፍተት ያላቸውን ጥርሶች በብሬስ ማስተካከል",
+      rootCanal: "የጥርስ ሥር ሕክምና",
+      toothReplacement: "ሰው ሰራሽ ጥርስ መትከል በተለያየ አማራጭ",
+      denture: "ገቢ ወጪ ጥርሶችን መስራት",
+      whitening: "የቆሸሸ ጥርስ ማጠብ",
+      extraction: "ማይታከም ጥርስ መንቀል",
+      braceDesc: "የተወለጋገዱ፣ የተራራቁ እና ክፍተት ያላቸውን ጥርሶች ዘመናዊ የብሬስ ሕክምና በመጠቀም ለተስተካከለ ማራኪ ፈገግታ እናስተካክላለን።",
+      rootCanalDesc: "የተጎዱ ወይም በኢንፌክሽን የተያዙ ጥርሶችን ትክክለኛ የጥርስ ሥር ሕክምና በማድረግ ሕመምን ማስታገስ እና ተፈጥሯዊ ጥርስዎን ማዳን።",
+      toothReplacementDesc: "የወለቁ ጥርሶችን በእርስዎ ፍላጎት መሠረት በተዘጋጁ ኢምፕላንቶች፣ ብሪጅ ወይም በሌሎች ሰው ሠራሽ አማራጮች መተካት።",
+      dentureDesc: "ፈገግታዎን ለመመለስ እና የማኘክ አቅምዎን ለማሻሻል ሙሉ ወይም በከፊል የሚወጡና የሚገቡ ጥርሶችን ማዘጋጀት።",
+      whiteningDesc: "የተቀየሩ እና የቆሸሹ ጥርሶችን በሙያዊ መንገድ በማጠብ በራስ መተማመን የሚሰጥና የሚያበራ ፈገግታ ማቅረብ።",
+      extractionDesc: "በከፍተኛ ሁኔታ የተጎዱ ወይም የወጡ ጥርሶችን በባለሙያ እንክብካቤ እና ያለ ሕመም በደህና ሁኔታ መንቀል።"
+    },
+    howItWorks: {
+      title: "የጥርስ ሕክምናችን እንዴት እንደሚሰራ",
+      "step1": {
+        title: "የመጀመሪያው ምክክር",
+        desc: "ፍላጎትዎን፣ ግብዎን እና ስጋትዎን ለመረዳት ጊዜ ወስደን በሚደረግ ሞቅ ያለ አቀባበል እና ጥልቅ ምክክር ይጀምራል።"
+      },
+      "step2": {
+        title: "ለዕርስዎ የተዘጋጀ የሕክምና ዕቅድ",
+        desc: "እያንዳንዱን አማራጭ እንዲያውቁት በማድረግ፣ ለተለየ ፍላጎትዎ ተስማሚ የሆነ የሕክምና ዕቅድ እናዘጋጃለን።"
+      },
+      "step3": {
+        title: "ምቹ እና ትክክለኛ ሕክምና",
+        desc: "በሕክምናው ወቅት ትክክለኛ እና ለስላሳ እንክብካቤ ለመስጠት ዘመናዊ ቴክኖሎጂዎችን እና ዘዴዎችን እንጠቀማለን።"
+      },
+      "step4": {
+        title: "ከሕክምና በኋላ የሚደረግ እንክብካቤ እና ክትትል",
+        desc: "የሕክምና ውጤቱን ጠብቆ ለማቆየት የሚረዱ መመሪያዎችን እና የክትትል እንክብካቤዎችን ያካተተ ሲሆን ቡድናችን ሁልጊዜም ዝግጁ ነው።"
+      }
+    },
+    faq: {
+      title: "ስለ ጥርስ ሕክምና አገልግሎታችን ተደጋግመው የሚጠየቁ ጥያቄዎች",
+      "q1": {
+        question: "ድንገተኛ የጥርስ ሕመም ካጋጠኝ ምን ማድረግ አለብኝ?",
+        answer: "ድንገተኛ የጥርስ ሕመም ካጋጠዎት ወዲያውኑ ወደ ክሊኒካችን ይደውሉ። አስፈላጊውን ቅድመ ሁኔታ እንነግርዎታለን፤ ቀጠሮም እንይዝልዎታለን።"
+      },
+      "q2": {
+        question: "የጥርስ ሐኪም ማየት እንዳለብኝ የሚያሳዩ ምልክቶች ምንድን ናቸው?",
+        answer: "የማይተው የጥርስ ሕመም፣ የድድ መድማት፣ ለቅዝቃዜ ወይም ለሙቀት የሚሰጥ ስሜት እና የጥርስ ቀለም መቀየር ሁሉ የጥርስ ሐኪም ዘንድ ቀጠሮ መያዝ እንዳለብዎ የሚያሳዩ ምልክቶች ናቸው።"
+      },
+      "q3": {
+        question: "የጥርስ ማጠብ/ማንጣት አገልግሎት ትሰጣላችሁ?",
+        answer: "አዎ፣ ፈገግታዎን በደህና ሁኔታ የሚያበራ በክሊኒክ ውስጥ እና በቤት ውስጥ የሚከናወኑ በባለሙያ የተደገፉ የጥርስ ማንጣት አገልግሎቶችን እንሰጣለን።"
+      },
+      "q4": {
+        question: "በስንት ጊዜ ልዩነት የጥርስ ሐኪም ማየት አለብኝ?",
+        answer: "በየስድስት ወሩ መደበኛ ምርመራ እና የጥርስ ጽዳት እንዲያደርጉ እንመክራለን፤ ሆኖም እንደየፍላጎትዎ የጥርስ ሐኪምዎ የተለየ ጊዜ ሊመድብልዎ ይችላል።"
+      },
+      "q5": {
+        question: "የጥርስ X-Ray ደህንነቱ የተጠበቀ ነው?",
+        answer: "ዘመናዊ የጥርስ X-Ray በጣም ዝቅተኛ የጨረር መጠን የሚጠቀም ስለሆነ ደህንነቱ የተጠበቀ እንደሆነ ይቆጠራል። ታካሚዎቻችንን ለመጠበቅ ሁሉንም ጥንቃቄዎች እንወስዳለን።"
+      }
+    },
+    contact: {
+      title: "ለፈገግታዎ ያግኙን",
+      location: "አድራሻችን",
+      locationAddress: "ቦሌ፣ ጌቱ ኮመርሻል ሴንተር 3ኛ ፎቅ",
+      call: "ይደውሉልን",
+      callDesc: "ለመደወል እዚህ ይጫኑ",
+      hours: "የሥራ ሰዓት",
+      hoursDesc: "ከሰኞ - ቅዳሜ ከጠዋቱ 2:00 እስከ ማታ 2:00",
+      formTitle: "ቀጠሮ ይያዙ",
+      formDesc: "ዝርዝሮችዎን ይሙሉ እና በዋትስአፕ እናገናኛለን።",
+      firstName: "ስም",
+      lastName: "የአባት ስም",
+      email: "ኢሜይል",
+      date: "ተመራጭ ቀን",
+      message: "መልእክትዎ",
+      submit: "በዋትስአፕ ይላኩ"
+    },
+    cta: {
+      title: "አይዘግዩ፤ ፈገግታዎ ምርጡ ይገባዋል!",
+      subtitle: "ወደ ጤናማ እና በራስ መተማመን ወዳለው ፈገግታ የሚያደርጉት ጉዞ እዚሁ በዶክተር ኢዩኤል ሌዊ የጥርስ ሕክምና ልዩ ክሊኒክ ይጀምራል።",
+      schedule: "ቀጠሮ ይያዙ",
+      call: "ዛሬ ይደውሉ"
+    },
+    footer: {
+      description: "ለሁሉም የዕድሜ ክልል ታካሚዎች ከቅድመ-መከላከል ጀምሮ ከፍተኛ ጥራት ያለው እና በረህራሄ የተሞላ የጥርስ ሕክምና እንክ�6�ካቤ ለመስጠት የተጋን ነን።",
+      quickLinks: "ፈጣን መስፈንጠሪያዎች",
+      home: "ዋና ገጽ",
+      about: "ስለ እኛ",
+      services: "አገልግሎቶች",
+      contact: "እኛን ለማግኘት",
+      ourServices: "አገልግሎቶቻችን",
+      brace: "ብሬስ / የጥርስ ማስተካከል",
+      rootCanal: "የጥርስ ሥር ሕክምና",
+      toothReplacement: "ሰው ሠራሽ ጥርስ መትከል",
+      denture: "ገቢ ወጪ ጥርሶች",
+      whitening: "የጥርስ ማጠብ/ማንጣት",
+      copyright: "© 2024 ዶክተር ኢዩኤል ሌዊ የጥርስ ሕክምና ልዩ ክሊኒክ። መብቱ በሕግ የተጠበቀ ነው።",
+      builtBy: "በራህዋ ዲጂታልስ የተሰራ"
+    }
+  }
+
+function applyTranslations(lang) {
+  const t = translations[lang];
+  if (!t) return;
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const value = key.split('.').reduce((obj, k) => obj && obj[k], t);
+    if (value) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = value;
+      } else if (value.includes('<')) {
+        el.innerHTML = value;
+      } else {
+        el.textContent = value;
+      }
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    const value = key.split('.').reduce((obj, k) => obj && obj[k], t);
+    if (value) {
+      el.placeholder = value;
+    }
+  });
+
+  const langLabel = document.getElementById('lang-label');
+  if (langLabel) {
+    langLabel.textContent = lang === 'en' ? 'AM' : 'EN';
+  }
+
+  localStorage.setItem('lang', lang);
+}
+
+function toggleLanguage() {
+  const current = localStorage.getItem('lang') || 'en';
+  const next = current === 'en' ? 'am' : 'en';
+  applyTranslations(next);
+}
+
+document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
+
+(function() {
+  const saved = localStorage.getItem('lang') || 'en';
+  applyTranslations(saved);
+})();
+
 </script>
 
 </body>
