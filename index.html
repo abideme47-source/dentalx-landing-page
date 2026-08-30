@@ -1055,7 +1055,7 @@ const translations = {
       call: "ዛሬ ይደውሉ"
     },
     footer: {
-      description: "ለሁሉም የዕድሜ ክልል ታካሚዎች ከቅድመ-መከላከል ጀምሮ ከፍተኛ ጥራት ያለው እና በረህራሄ የተሞላ የጥርስ ሕክምና እንክ�6�ካቤ ለመስጠት የተጋን ነን።",
+      description: "ለሁሉም የዕድሜ ክልል ታካሚዎች ከቅድመ-መከላከል ጀምሮ ከፍተኛ ጥራት ያለው እና በረህራሄ የተሞላ የጥርስ ሕክምና እንክብካቤ ለመስጠት የተጋን ነን።",
       quickLinks: "ፈጣን መስፈንጠሪያዎች",
       home: "ዋና ገጽ",
       about: "ስለ እኛ",
@@ -1116,9 +1116,10 @@ function toggleLanguage() {
 
 document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
 
+// Initialize with English as default
 (function() {
-  const saved = localStorage.getItem('lang') || 'en';
-  applyTranslations(saved);
+  localStorage.setItem('lang', 'en');
+  applyTranslations('en');
 })();
 
 </script>
