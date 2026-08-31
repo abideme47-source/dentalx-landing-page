@@ -854,22 +854,12 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px 0px 0px' });
+}, { threshold: 0.05 });
 
 revealElements.forEach(el => observer.observe(el));
-
-// Prevent image re-rendering during scroll
-let scrollTimeout;
-window.addEventListener('scroll', function() {
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(function() {
-    document.querySelectorAll('img').forEach(img => {
-      img.style.opacity = '1';
-    });
-  }, 100);
-}, { passive: true });
 
 // ========================================
 // MULTI-LANGUAGE SYSTEM
@@ -1153,10 +1143,8 @@ function toggleLanguage() {
 document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
 
 // Initialize with English as default
-(function() {
-  localStorage.setItem('lang', 'en');
-  applyTranslations('en');
-})();
+localStorage.setItem('lang', 'en');
+document.documentElement.lang = 'en';
 
 </script>
 
