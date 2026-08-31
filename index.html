@@ -10,6 +10,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'Benaiah Amharic Typeface';
+      src: url('public/fonts/Benaiah.ttf') format('truetype'),
+           url('public/fonts/Benaiah.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
     .font-display{font-family:'Plus Jakarta Sans',sans-serif}
     .font-sans{font-family:'Inter',sans-serif}
     .txt-lime{color:#bef264}
@@ -24,6 +32,9 @@
     .txt-lime-h:hover{color:#bef264}
     .bg-w10-h:hover{background:rgba(255,255,255,.1)}
     .bdr-forest-h:hover{border-color:rgba(32,48,31,.2)}
+    [lang="am"] * {
+      font-family: 'Benaiah Amharic Typeface', sans-serif !important;
+    }
     .sc103:hover{transform:scale(1.03)}
     .sc102:hover{transform:scale(1.02)}
     .grayscale{filter:grayscale(100%)}
