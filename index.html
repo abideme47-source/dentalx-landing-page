@@ -966,7 +966,7 @@ const translations = {
       letsTalk: "እንነጋገር"
     },
     hero: {
-      title: "በዕንቁ ባለሙያዎች የታገዘ ፈገግታ ያግኙ!"
+      title: "በዕንቁ ባለሙያዎች<br><span class='txt-forest-90'>የታገዘ ፈገግታ ያግኙ!</span>"
     },
     about: {
       title: "በእያንዳንዱ ፈገግታ ጠንካራ ግንኙነትን እንገነባለን።",
@@ -1103,7 +1103,7 @@ function applyTranslations(lang) {
 
   const langLabel = document.getElementById('lang-label');
   if (langLabel) {
-    langLabel.textContent = lang === 'en' ? 'AM' : 'EN';
+    langLabel.textContent = lang === 'en' ? 'አማ' : 'EN';
   }
 
   localStorage.setItem('lang', lang);
