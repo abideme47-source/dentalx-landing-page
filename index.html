@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr Euel Dental</title>
-  <link rel="icon" type="image/png" href="/images/logo.png?v=2">
-  <link rel="apple-touch-icon" href="/images/logo.png?v=2">
+  <link rel="icon" type="image/png" href="public/images/logo.png?v=2">
+  <link rel="apple-touch-icon" href="public/images/logo.png?v=2">
   <meta name="description" content="Dr Euel Lewi Speciality Dental Clinic offers restorative solutions, root canal therapy, smile brightening, emergency care and advanced orthodontics for all ages.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     @font-face {
       font-family: 'Benaiah Amharic Typeface';
-      src: url('/fonts/Benaiah.ttf') format('truetype'),
-           url('/fonts/Benaiah.otf') format('opentype');
+      src: url('public/fonts/Benaiah.ttf') format('truetype'),
+           url('public/fonts/Benaiah.otf') format('opentype');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
@@ -65,83 +65,6 @@
     .grayscale{filter:grayscale(100%)}
     html{scroll-behavior:smooth}
     .bg-scd{background:#e7e5e4}
-
-    /* Hero side accents */
-    .hero-enhanced { overflow: hidden; }
-    .hero-enhanced-inner { position: relative; }
-    .hero-enhanced-inner::before,
-    .hero-enhanced-inner::after {
-      content: '';
-      position: absolute;
-      pointer-events: none;
-      border: 1px solid rgba(190,242,100,.42);
-      border-radius: 999px;
-    }
-    .hero-enhanced-inner::before {
-      width: 230px;
-      height: 230px;
-      left: -130px;
-      top: 145px;
-      transform: rotate(28deg);
-    }
-    .hero-enhanced-inner::after {
-      width: 170px;
-      height: 170px;
-      right: -90px;
-      top: 80px;
-      transform: rotate(-22deg);
-    }
-    .hero-side-label {
-      position: absolute;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      gap: .55rem;
-      border: 1px solid rgba(254,252,232,.28);
-      border-radius: 999px;
-      padding: .6rem .9rem;
-      color: #20301f;
-      background: #bef264;
-      font-family: 'Inter', sans-serif;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      box-shadow: 0 12px 24px rgba(0,0,0,.12);
-      white-space: nowrap;
-    }
-    .hero-side-label::before {
-      content: '';
-      width: .42rem;
-      height: .42rem;
-      flex: 0 0 auto;
-      border-radius: 50%;
-      background: #20301f;
-    }
-    .hero-side-label.left { left: .25rem; top: 43%; transform: rotate(-8deg); }
-    .hero-side-label.right { right: .25rem; top: 33%; transform: rotate(8deg); background: #fefce8; }
-    .hero-side-note {
-      position: absolute;
-      z-index: 2;
-      color: rgba(254,252,232,.72);
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: .86rem;
-      font-style: italic;
-      line-height: 1.2;
-      text-align: center;
-    }
-    .hero-side-note.left-note { left: 2%; top: 56%; transform: rotate(-12deg); }
-    .hero-side-note.right-note { right: 2%; top: 51%; transform: rotate(12deg); }
-    @media (max-width: 640px) {
-      .hero-enhanced-inner::before { left: -170px; top: 190px; width: 190px; height: 190px; }
-      .hero-enhanced-inner::after { right: -125px; top: 120px; width: 140px; height: 140px; }
-      .hero-side-label { font-size: .58rem; padding: .45rem .6rem; letter-spacing: .04em; }
-      .hero-side-label.left { left: -.65rem; top: 42%; }
-      .hero-side-label.right { right: -.65rem; top: 32%; }
-      .hero-side-note { font-size: .68rem; }
-      .hero-side-note.left-note { left: -1%; top: 57%; }
-      .hero-side-note.right-note { right: -1%; top: 52%; }
-    }
 
     /* Animations */
     @keyframes fadeInUp {
@@ -418,7 +341,7 @@
     .faq-item.open .faq-answer {
       grid-template-rows: 1fr;
     }
-    .faq-answer div {
+    .faq-answer > div {
       overflow: hidden;
     }
     .faq-item .chevron {
@@ -458,7 +381,7 @@
   <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
      <div class="logo-container">
       <div class="logo">
-        <img src="/images/logo.png" alt="Dr Euel Lewi Logo">
+        <img src="public/images/logo.png" alt="Dr Euel Lewi Logo">
       </div>
       <a href="#home" class="font-display text-xl font-bold leading-tight">
         Dr Euel Lewi
@@ -492,20 +415,16 @@
 </header>
 
 <!-- Hero -->
-  <section class="hero-enhanced relative bg-forest txt-forest">
-  <div class="hero-enhanced-inner mx-auto max-w-7xl px-4 pb-0 sm:px-6 lg:px-8">
-  <span class="hero-side-label left">Comfort first</span>
-  <span class="hero-side-label right">Gentle care</span>
-  <span class="hero-side-note left-note">Modern care<br>made personal</span>
-  <span class="hero-side-note right-note">Small details.<br>Big confidence.</span>
-  <div class="relative pt-6 pb-8 text-center">
+<section class="relative bg-forest txt-forest">
+  <div class="mx-auto max-w-7xl px-4 pb-0 sm:px-6 lg:px-8">
+    <div class="relative pt-6 pb-8 text-center">
       <h1 class="font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl" data-i18n="hero.title">
         Your Smile<br>
         <span class="txt-forest-90">Deserves The Best!</span>
       </h1>
     </div>
       <div class="relative mt-8 overflow-hidden rounded-t-[2rem] img-zoom-container">
-         <img src="/images/hero-dental.webp" alt="Dr Euel Lewi Speciality Dental Clinic" class="h-[300px] w-full object-cover sm:h-[420px] lg:h-[560px] img-zoom">
+         <img src="public/images/hero-dental.webp" alt="Dr Euel Lewi Speciality Dental Clinic" class="h-[300px] w-full object-cover sm:h-[420px] lg:h-[560px] img-zoom">
       </div>
   </div>
 </section>
@@ -518,7 +437,7 @@
          <h2 class="font-display text-3xl font-bold leading-tight sm:text-4xl" data-i18n="about.title">Building Relationships One Smile at a Time</h2>
          <div class="mt-6">
          <div class="relative overflow-hidden rounded-3xl about-img">
-            <img src="/images/about-exam.png" alt="A smiling patient during a dental examination" class="h-64 w-full object-cover sm:h-72" loading="lazy" decoding="async">
+            <img src="public/images/about-exam.png" alt="A smiling patient during a dental examination" class="h-64 w-full object-cover sm:h-72" loading="lazy" decoding="async">
            <div class="absolute bottom-4 left-4 rounded-2xl bg-lime px-5 py-3 text-lime-foreground">
              <p class="font-display text-2xl font-bold counter" data-target="10000">0</p>
               <p class="text-xs font-medium" data-i18n="about.happyPatients">Happy Patients</p>
@@ -528,7 +447,7 @@
        </div>
        <div class="flex flex-col gap-6">
          <div class="relative overflow-hidden rounded-3xl about-img">
-            <img src="/images/about-dentist.png" alt="A confident dentist in a modern clinic" class="h-72 w-full object-cover sm:h-80" loading="lazy" decoding="async">
+            <img src="public/images/about-dentist.png" alt="A confident dentist in a modern clinic" class="h-72 w-full object-cover sm:h-80" loading="lazy" decoding="async">
            <div class="absolute left-4 top-4 rounded-2xl bg-forest px-5 py-3 txt-forest">
              <p class="font-display text-2xl font-bold counter" data-target="8">0</p>
               <p class="text-xs font-medium txt-forest-70" data-i18n="about.yearsExperience">Years of Experience</p>
@@ -615,7 +534,7 @@
       </div>
       <div class="relative">
         <div class="overflow-hidden rounded-3xl">
-          <img src="/images/how-it-works.webp" alt="A dental hygienist consulting with a patient" class="h-[420px] w-full object-cover" loading="lazy" decoding="async">
+          <img src="public/images/how-it-works.webp" alt="A dental hygienist consulting with a patient" class="h-[420px] w-full object-cover" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -790,7 +709,7 @@
         </div>
       </div>
       <div class="relative min-h-56 cta-img-container">
-        <img src="/images/cta-dental.png" alt="A dentist treating a patient" class="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async">
+        <img src="public/images/cta-dental.png" alt="A dentist treating a patient" class="absolute inset-0 h-full w-full object-cover" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -803,7 +722,7 @@
       <div>
         <div class="logo-container">
           <div class="logo">
-            <img src="/images/logo.png" alt="Dr Euel Lewi Logo">
+            <img src="public/images/logo.png" alt="Dr Euel Lewi Logo">
           </div>
           <a href="#home" class="font-display text-xl font-bold leading-tight">
             Dr Euel Lewi
@@ -864,17 +783,17 @@ function toggleMute(btn) {
   const currentSrc = iframe.getAttribute('src');
   if (currentSrc.includes('&mute=1')) {
     iframe.setAttribute('src', currentSrc.replace('&mute=1', ''));
-    btn.innerHTML = '<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/></svgMute';
+    btn.innerHTML = '<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/></svg> Mute';
   } else {
     iframe.setAttribute('src', currentSrc + '&mute=1');
-    btn.innerHTML = '<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svgUnmute';
+    btn.innerHTML = '<svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svg> Unmute';
   }
 }
 
 // FAQ Accordion
 function toggleFaq(element) {
   const allItems = document.querySelectorAll('.faq-item');
-  allItems.forEach(item ={
+  allItems.forEach(item => {
     if (item !== element) {
       item.classList.remove('open');
     }
@@ -883,11 +802,11 @@ function toggleFaq(element) {
 }
 
 // Counter animation
-const counterObserver = new IntersectionObserver((entries) ={
-  entries.forEach(entry ={
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
       const counters = entry.target.querySelectorAll('.counter');
-      counters.forEach(counter ={
+      counters.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-target'));
         const duration = 2000;
         const startTime = performance.now();
@@ -928,11 +847,11 @@ document.getElementById('appointment-form').addEventListener('submit', function(
 });
 
 // Scroll reveal animation
-const revealElements = document.querySelectorAll('section h2, section div, .service-card, .contact-card, .faq-item');
-revealElements.forEach(el =el.classList.add('reveal'));
+const revealElements = document.querySelectorAll('section h2, section > div, .service-card, .contact-card, .faq-item');
+revealElements.forEach(el => el.classList.add('reveal'));
 
-const observer = new IntersectionObserver((entries) ={
-  entries.forEach(entry ={
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
       observer.unobserve(entry.target);
@@ -940,7 +859,7 @@ const observer = new IntersectionObserver((entries) ={
   });
 }, { threshold: 0.05 });
 
-revealElements.forEach(el =observer.observe(el));
+revealElements.forEach(el => observer.observe(el));
 
 // ========================================
 // MULTI-LANGUAGE SYSTEM
@@ -1103,7 +1022,7 @@ const translations = {
       },
       "step2": {
         title: "ለዕርስዎ የተዘጋጀ የሕክምና ዕቅድ",
-        desc: "እያንዳንዱን አማራጭ እንዲያውቁት በማድረ��፣ ለተለየ ፍላጎትዎ ተስማሚ የ���ነ የሕክምና ዕቅድ እናዘጋጃለን።"
+        desc: "እያንዳንዱን አማራጭ እንዲያውቁት በማድረግ፣ ለተለየ ፍላጎትዎ ተስማሚ የሆነ የሕክምና ዕቅድ እናዘጋጃለን።"
       },
       "step3": {
         title: "ምቹ እና ትክክለኛ ሕክምና",
@@ -1185,9 +1104,9 @@ function applyTranslations(lang) {
 
   document.documentElement.lang = lang;
 
-  document.querySelectorAll('[data-i18n]').forEach(el ={
+  document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    const value = key.split('.').reduce((obj, k) =obj && obj[k], t);
+    const value = key.split('.').reduce((obj, k) => obj && obj[k], t);
     if (value) {
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
         el.placeholder = value;
@@ -1199,9 +1118,9 @@ function applyTranslations(lang) {
     }
   });
 
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el ={
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
-    const value = key.split('.').reduce((obj, k) =obj && obj[k], t);
+    const value = key.split('.').reduce((obj, k) => obj && obj[k], t);
     if (value) {
       el.placeholder = value;
     }
