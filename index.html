@@ -66,6 +66,99 @@
     html{scroll-behavior:smooth}
     .bg-scd{background:#e7e5e4}
 
+    /* Reference-inspired hero */
+    .hero-reference {
+      overflow: hidden;
+      background: #20301f;
+    }
+    .hero-reference-inner {
+      position: relative;
+      min-height: 650px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 1rem 0;
+    }
+    .hero-reference-title {
+      position: relative;
+      z-index: 2;
+      max-width: 1060px;
+      margin: 0;
+      color: #fefce8;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(3.4rem, 8.6vw, 7.4rem);
+      font-weight: 400;
+      line-height: .86;
+      letter-spacing: -.065em;
+      text-align: center;
+    }
+    .hero-reference-title span { color: #bef264; }
+    .hero-reference-stage {
+      position: relative;
+      width: min(100%, 1280px);
+      min-height: 365px;
+      margin-top: -1rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .hero-reference-arch {
+      position: absolute;
+      inset: auto 0 0;
+      height: min(58vw, 390px);
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      background: #bef264;
+    }
+    .hero-reference-person {
+      position: relative;
+      z-index: 1;
+      width: min(62vw, 475px);
+      height: min(65vw, 500px);
+      object-fit: cover;
+      object-position: center top;
+      mix-blend-mode: darken;
+      filter: saturate(1.08) contrast(1.03);
+      margin-bottom: -1px;
+    }
+    .hero-reference-pill {
+      position: absolute;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      padding: .55rem 1rem;
+      border-radius: 999px;
+      color: #20301f;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(.9rem, 1.5vw, 1.25rem);
+      white-space: nowrap;
+      box-shadow: 0 5px 12px rgba(0,0,0,.08);
+    }
+    .hero-reference-pill::after {
+      content: '';
+      width: .45rem;
+      height: .45rem;
+      border-radius: 50%;
+      background: #20301f;
+    }
+    .hero-reference-pill.left-one { left: 3%; top: 35%; background: #fefce8; transform: rotate(10deg); }
+    .hero-reference-pill.left-two { left: 1%; top: 52%; background: #bef264; transform: rotate(-28deg); }
+    .hero-reference-pill.right-one { right: 3%; top: 32%; background: #bef264; transform: rotate(-10deg); }
+    .hero-reference-pill.right-two { right: 0; top: 51%; background: #fefce8; transform: rotate(27deg); }
+    @media (max-width: 640px) {
+      .hero-reference-inner { min-height: 540px; padding-top: 2.5rem; }
+      .hero-reference-stage { min-height: 285px; margin-top: .5rem; }
+      .hero-reference-arch { height: 220px; }
+      .hero-reference-person { width: 72vw; height: 315px; }
+      .hero-reference-pill { font-size: .72rem; padding: .4rem .65rem; gap: .4rem; }
+      .hero-reference-pill::after { width: .3rem; height: .3rem; }
+      .hero-reference-pill.left-one { left: -1%; top: 35%; }
+      .hero-reference-pill.left-two { left: -5%; top: 55%; }
+      .hero-reference-pill.right-one { right: -2%; top: 34%; }
+      .hero-reference-pill.right-two { right: -7%; top: 54%; }
+    }
+
     /* Animations */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
@@ -415,17 +508,20 @@
 </header>
 
 <!-- Hero -->
-<section class="relative bg-forest txt-forest">
-  <div class="mx-auto max-w-7xl px-4 pb-0 sm:px-6 lg:px-8">
-    <div class="relative pt-6 pb-8 text-center">
-      <h1 class="font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl" data-i18n="hero.title">
-        Your Smile<br>
-        <span class="txt-forest-90">Deserves The Best!</span>
-      </h1>
+<section class="hero-reference txt-forest">
+  <div class="hero-reference-inner mx-auto max-w-7xl">
+    <h1 class="hero-reference-title" data-i18n="hero.title">
+      Your Smile<br>
+      Deserves <span>The Best!</span>
+    </h1>
+    <div class="hero-reference-stage">
+      <div class="hero-reference-arch" aria-hidden="true"></div>
+      <span class="hero-reference-pill left-one">Fast Fix</span>
+      <span class="hero-reference-pill left-two">Glowing Teeth</span>
+      <span class="hero-reference-pill right-one">No Pain</span>
+      <span class="hero-reference-pill right-two">More Smile</span>
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero-patient-HCJP7tOTrlx2oJDbHF83RFpeqxWMCi.jpg" alt="Smiling dental patient" class="hero-reference-person">
     </div>
-      <div class="relative mt-8 overflow-hidden rounded-t-[2rem] img-zoom-container">
-         <img src="public/images/hero-dental.webp" alt="Dr Euel Lewi Speciality Dental Clinic" class="h-[300px] w-full object-cover sm:h-[420px] lg:h-[560px] img-zoom">
-      </div>
   </div>
 </section>
 
@@ -876,7 +972,7 @@ const translations = {
       letsTalk: "Let's Talk"
     },
     hero: {
-      title: "Your Smile<br><span class='txt-forest-90'>Deserves The Best!</span>"
+      title: "Your Smile<br>Deserves <span>The Best!</span>"
     },
     about: {
       title: "Building Relationships One Smile at a Time",
@@ -1053,7 +1149,7 @@ const translations = {
       },
       "q5": {
         question: "የጥርስ X-Ray ደህንነቱ የተጠበቀ ነው?",
-        answer: "ዘመናዊ የጥርስ X-Ray በጣም ዝቅተኛ የጨረር መጠን የሚጠቀም ስለሆነ ደህንነቱ የተጠበቀ እንደሆነ ይቆጠራል። ታካሚዎቻችንን ለመጠበቅ ሁሉንም ጥንቃቄዎች እንወስዳለን።"
+        answer: "ዘመናዊ የጥርስ X-Ray በጣም ዝቅተኛ የጨረር መጠን የሚጠቀም ስለሆነ ደህንነቱ የተጠበቀ እንደሆነ ይቆጠራል። ታካሚዎቻችንን ለመጠበቅ ሁሉንም ጥንቃ���ዎች እንወስዳለን።"
       }
     },
     contact: {
