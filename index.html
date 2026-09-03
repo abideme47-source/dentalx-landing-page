@@ -66,6 +66,83 @@
     html{scroll-behavior:smooth}
     .bg-scd{background:#e7e5e4}
 
+    /* Hero side accents */
+    .hero-enhanced { overflow: hidden; }
+    .hero-enhanced-inner { position: relative; }
+    .hero-enhanced-inner::before,
+    .hero-enhanced-inner::after {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      border: 1px solid rgba(190,242,100,.42);
+      border-radius: 999px;
+    }
+    .hero-enhanced-inner::before {
+      width: 230px;
+      height: 230px;
+      left: -130px;
+      top: 145px;
+      transform: rotate(28deg);
+    }
+    .hero-enhanced-inner::after {
+      width: 170px;
+      height: 170px;
+      right: -90px;
+      top: 80px;
+      transform: rotate(-22deg);
+    }
+    .hero-side-label {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      border: 1px solid rgba(254,252,232,.28);
+      border-radius: 999px;
+      padding: .6rem .9rem;
+      color: #20301f;
+      background: #bef264;
+      font-family: 'Inter', sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      box-shadow: 0 12px 24px rgba(0,0,0,.12);
+      white-space: nowrap;
+    }
+    .hero-side-label::before {
+      content: '';
+      width: .42rem;
+      height: .42rem;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: #20301f;
+    }
+    .hero-side-label.left { left: .25rem; top: 43%; transform: rotate(-8deg); }
+    .hero-side-label.right { right: .25rem; top: 33%; transform: rotate(8deg); background: #fefce8; }
+    .hero-side-note {
+      position: absolute;
+      z-index: 2;
+      color: rgba(254,252,232,.72);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: .86rem;
+      font-style: italic;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .hero-side-note.left-note { left: 2%; top: 56%; transform: rotate(-12deg); }
+    .hero-side-note.right-note { right: 2%; top: 51%; transform: rotate(12deg); }
+    @media (max-width: 640px) {
+      .hero-enhanced-inner::before { left: -170px; top: 190px; width: 190px; height: 190px; }
+      .hero-enhanced-inner::after { right: -125px; top: 120px; width: 140px; height: 140px; }
+      .hero-side-label { font-size: .58rem; padding: .45rem .6rem; letter-spacing: .04em; }
+      .hero-side-label.left { left: -.65rem; top: 42%; }
+      .hero-side-label.right { right: -.65rem; top: 32%; }
+      .hero-side-note { font-size: .68rem; }
+      .hero-side-note.left-note { left: -1%; top: 57%; }
+      .hero-side-note.right-note { right: -1%; top: 52%; }
+    }
+
     /* Animations */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
@@ -415,9 +492,13 @@
 </header>
 
 <!-- Hero -->
-<section class="relative bg-forest txt-forest">
-  <div class="mx-auto max-w-7xl px-4 pb-0 sm:px-6 lg:px-8">
-    <div class="relative pt-6 pb-8 text-center">
+  <section class="hero-enhanced relative bg-forest txt-forest">
+  <div class="hero-enhanced-inner mx-auto max-w-7xl px-4 pb-0 sm:px-6 lg:px-8">
+  <span class="hero-side-label left">Comfort first</span>
+  <span class="hero-side-label right">Gentle care</span>
+  <span class="hero-side-note left-note">Modern care<br>made personal</span>
+  <span class="hero-side-note right-note">Small details.<br>Big confidence.</span>
+  <div class="relative pt-6 pb-8 text-center">
       <h1 class="font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl" data-i18n="hero.title">
         Your Smile<br>
         <span class="txt-forest-90">Deserves The Best!</span>
