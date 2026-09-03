@@ -1,0 +1,16 @@
+{
+  "name": "dentalx-landing-page",
+  "version": "1.0.0",
+  "description": "Dr Euel Lewi Speciality Dental Clinic Landing Page",
+  "scripts": {
+    "dev": "npx serve",
+    "build": "echo 'Static site - no build step required'",
+    "preview": "npx serve"
+  },
+  "keywords": ["dental", "clinic", "landing-page"],
+  "author": "Dr Euel Lewi",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}
